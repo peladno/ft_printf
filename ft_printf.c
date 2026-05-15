@@ -6,17 +6,19 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 22:08:58 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/15 22:28:41 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/05/15 22:47:36 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_format(char spec, va_list args)
+int	print_format(char format, va_list args)
 {
 	// • %c Prints a single character.
+	if (format == 'c')
+		return (ft_putchar(va_arg(args, int)));
 	// • %s Prints a string (as defined by the common C convention).
-	// • %p The void * pointer argument has to be printed in hexadecimal format.
+	// • %p The void* pointer argument has to be printed in hexadecimal format.
 	// • %d Prints a decimal (base 10) number.
 	// • %i Prints an integer in base 10.
 	// • %u Prints an unsigned decimal (base 10) number.

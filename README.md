@@ -1,6 +1,11 @@
 This project has been created as part of the 42 curriculum by jperez-u
 
-# Resources 
+## Description:
+
+Let's start to define what is variadic function. In C language, variadic functions are functions that can take a variable number of arguments. This feature is useful when the number of arguments for a function is unknown. It takes one fixed argument, and then any number of arguments can be passed.
+
+
+## Resources 
 
 - [Understanding f_printf](https://www.youtube.com/watch?v=Hb2m7htiKWM&t=267s)
 - [Variadic functions](https://www.youtube.com/watch?v=7Sph8JlRo0g)
