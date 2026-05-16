@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   print_string.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/13 22:09:12 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/16 15:13:35 by jperez-u         ###   ########.fr       */
+/*   Created: 2026/05/16 15:07:03 by jperez-u          #+#    #+#             */
+/*   Updated: 2026/05/16 15:15:04 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF
-# define FT_PRINTF
+#include "ft_printf.h"
 
-# include "stdarg.h"
-# include "stdio.h"
-# include "stdlib.h"
-# include "unistd.h"
+int	print_string(char *str)
+{
+	int	len;
 
-int		ft_printf(const char *format, ...);
-int		print_format(char format, va_list args);
-int		print_char(int c);
-int		print_string(char *str);
-size_t	ft_strlen(char *str);
-
-#endif
+	if (!str)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	while (str[len])
+	{
+		write(1, &str[len], 1);
+		len++;
+	}
+	// len = ft_strlen(str);
+	return (len);
+}

@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   print_char.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/13 22:09:12 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/16 15:13:35 by jperez-u         ###   ########.fr       */
+/*   Created: 2026/05/15 22:47:55 by jperez-u          #+#    #+#             */
+/*   Updated: 2026/05/16 15:07:40 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF
-# define FT_PRINTF
+#include "ft_printf.h"
 
-# include "stdarg.h"
-# include "stdio.h"
-# include "stdlib.h"
-# include "unistd.h"
-
-int		ft_printf(const char *format, ...);
-int		print_format(char format, va_list args);
-int		print_char(int c);
-int		print_string(char *str);
-size_t	ft_strlen(char *str);
-
-#endif
+int	print_char(int c)
+{
+	return (write(1, &c, 1));
+}

@@ -5,14 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/15 22:47:55 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/15 22:49:37 by jperez-u         ###   ########.fr       */
+/*   Created: 2026/05/16 15:08:21 by jperez-u          #+#    #+#             */
+/*   Updated: 2026/05/16 15:12:02 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar(int c)
+size_t	ft_strlen(char *str)
 {
-	return (write(1, &c, 1));
+	size_t	len;
+
+	len = 0;
+	while (str[len])
+	{
+		len++;
+	}
+	return (len);
 }
