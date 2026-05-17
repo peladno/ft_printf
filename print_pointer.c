@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   print_pointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/16 15:08:21 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/17 16:56:53 by jperez-u         ###   ########.fr       */
+/*   Created: 2026/05/17 16:46:20 by jperez-u          #+#    #+#             */
+/*   Updated: 2026/05/17 16:46:21 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-size_t	ft_strlen(char *str)
+int	print_pointer(void *ptr)
 {
-	size_t	len;
+	unsigned long address;
+	int count;
 
-	len = 0;
-	while (str[len])
-	{
-		len++;
-	}
-	return (len);
-}
-
-int	print_hex(unsigned long n)
-{
-	char	*base;
-
-	base = "0123456789abcdef";
-	if (n >= 16)
-		put_hex(n / 16);
-	write(1, &base[n % 16], 1);
+	address = (unsigned long)ptr;
+	count = 0;
+	count += write(1, "0x", 2);
+	count += print_hex(address);
+	return (count);
 }

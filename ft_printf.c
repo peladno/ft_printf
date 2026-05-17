@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 22:08:58 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/16 16:27:19 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/05/17 16:48:49 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ int	print_format(char format, va_list args)
 	if (format == 'c')
 		return (print_char(va_arg(args, int)));
 	else if (format == 's')
-		return (print_string(va_arg(args, char *)))
-	// • %p The void* pointer argument has to be printed in hexadecimal format.
+		return (print_string(va_arg(args, char *)));
+	else if (format == 'p')
+		return (print_pointer(va_arg(args, void *)));
 	// • %d Prints a decimal (base 10) number.
 	// • %i Prints an integer in base 10.
 	// • %u Prints an unsigned decimal (base 10) number.

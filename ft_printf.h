@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 22:09:12 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/16 15:13:35 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/05/17 16:46:33 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int		ft_printf(const char *format, ...);
 int		print_format(char format, va_list args);
 int		print_char(int c);
 int		print_string(char *str);
+int		print_pointer(void *ptr);
 size_t	ft_strlen(char *str);
 
 #endif
