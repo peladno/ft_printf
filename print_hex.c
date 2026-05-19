@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   print_hex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/13 22:09:12 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/19 22:06:38 by jperez-u         ###   ########.fr       */
+/*   Created: 2026/05/19 21:54:45 by jperez-u          #+#    #+#             */
+/*   Updated: 2026/05/19 21:54:54 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include "stdarg.h"
-# include "stdio.h"
-# include "stdlib.h"
-# include "unistd.h"
+int	print_hex(unsigned long n)
+{
+	char	*base;
 
-int		ft_printf(const char *format, ...);
-int		print_format(char format, va_list args);
-int		print_char(int c);
-int		print_string(char *str);
-int		print_pointer(void *ptr);
-int		print_hex(unsigned long n);
-char	*ft_itoa(int number);
-int		print_number(int number);
-#endif
+	base = "0123456789abcdef";
+	if (n >= 16)
+		print_hex(n / 16);
+	return (write(1, &base[n % 16], 1));
+}

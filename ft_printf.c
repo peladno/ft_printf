@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 22:08:58 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/17 16:58:47 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/05/19 22:16:53 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	print_format(char format, va_list args)
 		return (print_string(va_arg(args, char *)));
 	else if (format == 'p')
 		return (print_pointer(va_arg(args, void *)));
+	else if (format == 'd' || format == 'i')
+		return (print_number(va_arg(args, int)));
 	// • %d Prints a decimal (base 10) number.
 	// • %i Prints an integer in base 10.
 	// • %u Prints an unsigned decimal (base 10) number.
@@ -58,7 +60,7 @@ void	test(char *fmt, ...)
 	va_start(args, fmt);
 	// everytime va_arg is called, retrun the next value
 	// carefull va_arg doesn know how many arg are
-	//“default argument promotions”: char and short to int, float to double
+	// “default argument promotions”: char and short to int, float to double
 	printf("%s\n", va_arg(args, char *));
 	printf("%d\n", va_arg(args, int));
 	printf("%c\n", va_arg(args, int));
