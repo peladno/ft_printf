@@ -6,8 +6,8 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 22:08:58 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/19 22:16:53 by jperez-u         ###   ########.fr       */
-/*                                                                            */
+/*   Updated: 2026/05/21 20:22:07 by jperez-u         ###   ########.fr       */
+/*                                                                             */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
@@ -22,8 +22,8 @@ int	print_format(char format, va_list args)
 		return (print_pointer(va_arg(args, void *)));
 	else if (format == 'd' || format == 'i')
 		return (print_number(va_arg(args, int)));
-	// • %d Prints a decimal (base 10) number.
-	// • %i Prints an integer in base 10.
+	else if (format == 'u')
+		return (print_unsigned(va_arg(args, unsigned int)));
 	// • %u Prints an unsigned decimal (base 10) number.
 	// • %x Prints a number in hexadecimal (base 16) lowercase format.
 	// • %X Prints a number in hexadecimal (base 16) uppercase format.
@@ -58,7 +58,7 @@ void	test(char *fmt, ...)
 	va_list	args;
 
 	va_start(args, fmt);
-	// everytime va_arg is called, retrun the next value
+	// everytime va_arg is called, return the next value
 	// carefull va_arg doesn know how many arg are
 	// “default argument promotions”: char and short to int, float to double
 	printf("%s\n", va_arg(args, char *));

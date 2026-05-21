@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   print_unsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/13 22:09:12 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/21 20:52:51 by jperez-u         ###   ########.fr       */
+/*   Created: 2026/05/21 20:19:06 by jperez-u          #+#    #+#             */
+/*   Updated: 2026/05/21 21:10:21 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include "stdarg.h"
-# include "stdio.h"
-# include "stdlib.h"
-# include "unistd.h"
+int	print_unsigned(unsigned int n)
+{
+	int	count;
 
-int	ft_printf(const char *format, ...);
-int	print_format(char format, va_list args);
-int	print_char(int c);
-int	print_string(char *str);
-int	print_pointer(void *ptr);
-int	print_hex(unsigned long n);
-int	print_number(int number);
-int	print_unsigned(unsigned int number);
+	count = 0;
+	if (n >= 10)
+		count += print_unsigned(n / 10);
+	count += print_char((n % 10) + '0');
+	return (count);
+}
 
-#endif
+int	main(void)
+{
+	int	count;
+
+	count = print_unsigned(42);
+	print_unsigned(count);
+	return (0);
+}
