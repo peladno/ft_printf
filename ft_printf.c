@@ -6,8 +6,13 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 22:08:58 by jperez-u          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2026/05/22 20:14:18 by jperez-u         ###   ########.fr       */
 /*                                                                            */
+=======
+/*   Updated: 2026/05/21 20:22:07 by jperez-u         ###   ########.fr       */
+/*                                                                             */
+>>>>>>> c3fc72a (print unsigned number)
 /* ************************************************************************** */
 
 #include "ft_printf.h"
@@ -24,7 +29,12 @@ int	print_format(char format, va_list args)
 		return (print_number(va_arg(args, int)));
 	else if (format == 'u')
 		return (print_unsigned(va_arg(args, unsigned int)));
+<<<<<<< HEAD
 	// • %u Prints an unsigned decimal (base 10) number.
+=======
+	else if (format == 'x')
+		print_nbhex(va_arg(args, int));
+>>>>>>> c3fc72a (print unsigned number)
 	// • %x Prints a number in hexadecimal (base 16) lowercase format.
 	// • %X Prints a number in hexadecimal (base 16) uppercase format.
 	// • %% Prints a percent sign
