@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_string.c                                     :+:      :+:    :+:   */
+/*   print_nbhex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/16 15:07:03 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/21 21:20:54 by jperez-u         ###   ########.fr       */
+/*   Created: 2026/05/21 21:17:13 by jperez-u          #+#    #+#             */
+/*   Updated: 2026/05/21 21:24:16 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-int	print_string(char *str)
+int	print_nbhex(int number)
 {
-	int	len;
+	int	count;
 
-	if (!str)
-	{
-		write(1, "(null)", 6);
-		return (6);
-	}
-	while (str[len])
-	{
-		write(1, &str[len], 1);
-		len++;
-	}
-	return (len);
+	count = 0;
+	return (count);
 }

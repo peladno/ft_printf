@@ -24,7 +24,8 @@ int	print_format(char format, va_list args)
 		return (print_number(va_arg(args, int)));
 	else if (format == 'u')
 		return (print_unsigned(va_arg(args, unsigned int)));
-	// • %u Prints an unsigned decimal (base 10) number.
+	else if (format == 'x')
+		print_nbhex(va_arg(args, int));
 	// • %x Prints a number in hexadecimal (base 16) lowercase format.
 	// • %X Prints a number in hexadecimal (base 16) uppercase format.
 	// • %% Prints a percent sign

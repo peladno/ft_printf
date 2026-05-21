@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 22:47:55 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/16 15:07:40 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/05/21 21:20:24 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 
 int	print_char(int c)
 {
-	return (write(1, &c, 1));
+	int	count;
+
+	count = 0;
+	count += write(1, &c, 1);
+	return (count);
 }

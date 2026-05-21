@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 22:09:12 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/21 20:52:51 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/05/21 21:18:42 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ int	print_pointer(void *ptr);
 int	print_hex(unsigned long n);
 int	print_number(int number);
 int	print_unsigned(unsigned int number);
-
+int	print_nbhex(int number);
 #endif
