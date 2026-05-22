@@ -34,9 +34,7 @@ int	print_pointer(void *ptr);
 int	print_hex(unsigned long n);
 int	print_number(int number);
 int	print_unsigned(unsigned int number);
-<<<<<<< HEAD
-int	print_nbhex(int number);
-=======
 
->>>>>>> a9444da (print unsigned number)
+int	print_nbhex(int number);
+
 #endif
