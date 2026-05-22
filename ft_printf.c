@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 22:08:58 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/22 20:28:48 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/05/22 20:49:20 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int	print_format(char format, va_list args)
 	else if (format == 'u')
 		return (print_unsigned(va_arg(args, unsigned int)));
 	else if (format == 'x')
-		print_nbhex(va_arg(args, int));
-	// • %x Prints a number in hexadecimal (base 16) lowercase format.
-	// • %X Prints a number in hexadecimal (base 16) uppercase format.
-	// • %% Prints a percent sign
+		print_hex(va_arg(args, int), 'x');
+	else if (format == 'X')
+		print_hex(va_arg(args, int), 'X');
+	// • %% Prints a percent sig
 }
 
 int	ft_printf(const char *format, ...)

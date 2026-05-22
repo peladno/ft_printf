@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 20:26:39 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/22 20:28:43 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/05/22 20:48:08 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ int	print_format(char format, va_list args);
 int	print_char(int c);
 int	print_string(char *str);
 int	print_pointer(void *ptr);
-int	print_hex(unsigned long n);
+int	print_hex(unsigned int num, const char spec);
 int	print_number(int number);
 int	print_unsigned(unsigned int number);
-int	print_nbhex(int number);
 
 #endif
