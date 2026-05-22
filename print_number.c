@@ -6,18 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 21:55:27 by jperez-u          #+#    #+#             */
-<<<<<<< HEAD
-<<<<<<< HEAD
-/*   Updated: 2026/05/22 20:14:50 by jperez-u         ###   ########.fr       */
-=======
-/*   Updated: 2026/05/22 20:12:03 by jperez-u         ###   ########.fr       */
->>>>>>> c3fc72a (print unsigned number)
-=======
-/*   Updated: 2026/05/22 20:12:03 by jperez-u         ###   ########.fr       */
-=======
-/*   Updated: 2026/05/22 20:08:41 by jperez-u         ###   ########.fr       */
->>>>>>> 9b46311 (merge with 42 repo)
->>>>>>> 2eb73d9 (merge with 42 repo)
+/*   Updated: 2026/05/22 20:15:35 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
