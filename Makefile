@@ -1,12 +1,12 @@
 NAME = libftprintf.a
 
-CC = cc 
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
-AR = ar 
-ARFLAGS = rcs
+
+AR = ar rcs
+RM = rm -f
 
 SRCS = ft_printf.c \
-	print_format.c \
 	print_char.c \
 	print_string.c \
 	print_pointer.c \
@@ -14,15 +14,15 @@ SRCS = ft_printf.c \
 	print_number.c \
 	print_unsigned.c
 
-OBJS  = ${SRCS}: .c=.o 
+OBJS = $(SRCS:.c=.o)
 
-all: ${NAME}
+all: $(NAME)
 
-${NAME}: ${OBJS}
-	${AR} ${CFLAGS} ${NAME} ${OBJS}
+$(NAME): $(OBJS)
+	$(AR) $(NAME) $(OBJS)
 
-%.o:%.c 
-	${CC} ${CFLAGS} -c $< -o $@
+%.o: %.c ft_printf.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)

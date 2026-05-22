@@ -6,30 +6,32 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 22:08:58 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/22 20:58:22 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/05/22 22:02:15 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+// TODO manage errors
+
 int	print_format(char format, va_list args)
 {
-	if (format == 'c')
+	if (format == 'c') // test done
 		return (print_char(va_arg(args, int)));
-	else if (format == 's')
+	else if (format == 's') // test done
 		return (print_string(va_arg(args, char *)));
-	else if (format == 'p')
+	else if (format == 'p') // test done
 		return (print_pointer(va_arg(args, void *)));
 	else if (format == 'd' || format == 'i')
 		return (print_number(va_arg(args, int)));
 	else if (format == 'u')
 		return (print_unsigned(va_arg(args, unsigned int)));
 	else if (format == 'x')
-		print_hex(va_arg(args, int), 'x');
+		return (print_hex(va_arg(args, unsigned int), 'x'));
 	else if (format == 'X')
-		print_hex(va_arg(args, int), 'X');
+		return (print_hex(va_arg(args, unsigned int), 'X'));
 	else if (format == '%')
-		print_char('%');
+		return (print_char('%'));
 	return (0);
 }
 
@@ -52,31 +54,9 @@ int	ft_printf(const char *format, ...)
 			i++;
 		}
 		else
-		{
-			count += print_string(format[i]);
-			i++;
-		}
+			count += print_char(format[i]);
+		i++;
 	}
 	va_end(args);
 	return (count);
-}
-
-void	test(char *fmt, ...)
-{
-	va_list	args;
-
-	va_start(args, fmt);
-	// everytime va_arg is called, return the next value
-	// carefull va_arg doesn know how many arg are
-	// “default argument promotions”: char and short to int, float to double
-	printf("%s\n", va_arg(args, char *));
-	printf("%d\n", va_arg(args, int));
-	printf("%c\n", va_arg(args, int));
-	va_end(args);
-}
-
-int	main(void)
-{
-	test("x", "hola", 42, 'A');
-	return (0);
 }
