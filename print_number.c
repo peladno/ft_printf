@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 20:27:03 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/22 20:27:04 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/05/22 20:28:06 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,6 @@ int	print_number(int n)
 		num = -num;
 	}
 	if (num >= 10)
-<<<<<<< HEAD
-		print_number(num / 10);
-=======
-<<<<<<< HEAD
-		count += print_number(num / 10);
-=======
-		print_number(num / 10);
->>>>>>> a9444da (print unsigned number)
->>>>>>> cc7e0f6 (done)
-	count += print_char((num % 10) + '0');
+		count += print_char((num % 10) + '0');
 	return (count);
 }
