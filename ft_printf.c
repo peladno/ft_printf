@@ -6,13 +6,8 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 22:08:58 by jperez-u          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2026/05/21 20:22:07 by jperez-u         ###   ########.fr       */
-/*                                                                             */
-=======
-/*   Updated: 2026/05/20 20:19:03 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/05/22 19:50:29 by jperez-u         ###   ########.fr       */
 /*                                                                            */
->>>>>>> 2a663b5 (error)
 /* ************************************************************************** */
 
 #include "ft_printf.h"
@@ -27,14 +22,7 @@ int	print_format(char format, va_list args)
 		return (print_pointer(va_arg(args, void *)));
 	else if (format == 'd' || format == 'i')
 		return (print_number(va_arg(args, int)));
-<<<<<<< HEAD
-	else if (format == 'u')
-		return (print_unsigned(va_arg(args, unsigned int)));
-	else if (format == 'x')
-		print_nbhex(va_arg(args, int));
-=======
 	// • %u Prints an unsigned decimal (base 10) number.
->>>>>>> 2a663b5 (error)
 	// • %x Prints a number in hexadecimal (base 16) lowercase format.
 	// • %X Prints a number in hexadecimal (base 16) uppercase format.
 	// • %% Prints a percent sign
