@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 20:19:06 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/21 21:10:21 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/05/22 20:58:01 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,4 @@ int	print_unsigned(unsigned int n)
 		count += print_unsigned(n / 10);
 	count += print_char((n % 10) + '0');
 	return (count);
-}
-
-int	main(void)
-{
-	int	count;
-
-	count = print_unsigned(42);
-	print_unsigned(count);
-	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 22:08:58 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/22 20:49:20 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/05/22 20:58:22 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ int	print_format(char format, va_list args)
 		print_hex(va_arg(args, int), 'x');
 	else if (format == 'X')
 		print_hex(va_arg(args, int), 'X');
-	// • %% Prints a percent sig
+	else if (format == '%')
+		print_char('%');
+	return (0);
 }
 
 int	ft_printf(const char *format, ...)
@@ -47,6 +49,11 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			count += print_format(format[i + 1], args);
+			i++;
+		}
+		else
+		{
+			count += print_string(format[i]);
 			i++;
 		}
 	}
@@ -71,4 +78,5 @@ void	test(char *fmt, ...)
 int	main(void)
 {
 	test("x", "hola", 42, 'A');
+	return (0);
 }
