@@ -6,13 +6,14 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 22:08:58 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/22 22:02:15 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/05/25 20:42:48 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-// TODO manage errors
+// TEST plz
+// TODO remember delete main.c
 
 int	print_format(char format, va_list args)
 {
@@ -32,6 +33,20 @@ int	print_format(char format, va_list args)
 		return (print_hex(va_arg(args, unsigned int), 'X'));
 	else if (format == '%')
 		return (print_char('%'));
+	return (-1);
+}
+
+static int	end_error(va_list args)
+{
+	va_end(args);
+	return (-1);
+}
+
+static int	add_written(int *count, int written)
+{
+	if (written == -1)
+		return (-1);
+	*count += written;
 	return (0);
 }
 
@@ -40,21 +55,23 @@ int	ft_printf(const char *format, ...)
 	va_list	args;
 	int		count;
 	int		i;
+	int		written;
 
-	i = 0;
 	if (!format)
 		return (-1);
 	va_start(args, format);
 	count = 0;
+	i = 0;
 	while (format[i])
 	{
+		if (format[i] == '%' && format[i + 1] == '\0')
+			return (end_error(args));
 		if (format[i] == '%')
-		{
-			count += print_format(format[i + 1], args);
-			i++;
-		}
+			written = print_format(format[++i], args);
 		else
-			count += print_char(format[i]);
+			written = print_char(format[i]);
+		if (add_written(&count, written) == -1)
+			return (end_error(args));
 		i++;
 	}
 	va_end(args);
