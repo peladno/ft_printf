@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 15:07:03 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/22 21:34:17 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/05/25 20:26:12 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,20 @@
 
 int	print_string(char *str)
 {
-	int	len;
+	int	i;
+	int	count;
 
-	len = 0;
+	count = 0;
+	i = 0;
 	if (!str)
 	{
-		write(1, "(null)", 6);
-		return (6);
+		count += (write(1, "(null)", 6));
+		return (count);
 	}
-	while (str[len])
+	while (str[i])
 	{
-		print_char(str[len]);
-		len++;
+		count += print_char(str[i]);
+		i++;
 	}
-	return (len);
+	return (count);
 }
