@@ -114,4 +114,4 @@ To execute the program:
 
 ## AI disclosure
 
-I used AI to test mi code usuing main.c file.
+I used AI to test my code using main.c file.
