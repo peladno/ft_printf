@@ -12,6 +12,7 @@
 
 #include "ft_printf.h"
 #include <stdio.h>
+#include <stddef.h>
 
 // make
 // cc -Wall -Wextra -Werror main.c libftprintf.a -o test
@@ -40,8 +41,8 @@ int	main(void)
 	printf("real return: %d\n\n", count2);
 
 	printf("======== STRING NULL ========\n");
-	count1 = ft_printf("mine: %s\n", (char *)NULL);
-	count2 = printf("real: %s\n", (char *)NULL);
+	count1 = ft_printf("mine: %s\n", NULL);
+	count2 = printf("real: %s\n", NULL);
 	printf("mine return: %d\n", count1);
 	printf("real return: %d\n\n", count2);
 
