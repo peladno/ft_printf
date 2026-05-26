@@ -6,22 +6,19 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 22:08:58 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/25 20:42:48 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/05/26 20:51:09 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-// TEST plz
-// TODO remember delete main.c
-
 int	print_format(char format, va_list args)
 {
-	if (format == 'c') // test done
+	if (format == 'c')
 		return (print_char(va_arg(args, int)));
-	else if (format == 's') // test done
+	else if (format == 's')
 		return (print_string(va_arg(args, char *)));
-	else if (format == 'p') // test done
+	else if (format == 'p')
 		return (print_pointer(va_arg(args, void *)));
 	else if (format == 'd' || format == 'i')
 		return (print_number(va_arg(args, int)));
