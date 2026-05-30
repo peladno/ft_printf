@@ -6,7 +6,7 @@
 /*   By: jperez-u <jperez-u@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 22:08:58 by jperez-u          #+#    #+#             */
-/*   Updated: 2026/05/26 20:51:09 by jperez-u         ###   ########.fr       */
+/*   Updated: 2026/05/30 16:02:59 by jperez-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	print_format(char format, va_list args)
 		return (print_hex(va_arg(args, unsigned int), 'X'));
 	else if (format == '%')
 		return (print_char('%'));
-	return (-1);
+	return (print_char(format));
 }
 
 static int	end_error(va_list args)
@@ -41,7 +41,7 @@ static int	end_error(va_list args)
 
 static int	add_written(int *count, int written)
 {
-	if (written == -1)
+	if (written < 0)
 		return (-1);
 	*count += written;
 	return (0);
