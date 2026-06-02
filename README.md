@@ -63,11 +63,11 @@ The magic happens here:
 ```c
 int	print_format(char format, va_list args)
 {
-	if (format == 'c') 
+	if (format == 'c')
 		return (print_char(va_arg(args, int)));
 	else if (format == 's')
 		return (print_string(va_arg(args, char *)));
-	else if (format == 'p') 
+	else if (format == 'p')
 		return (print_pointer(va_arg(args, void *)));
 	else if (format == 'd' || format == 'i')
 		return (print_number(va_arg(args, int)));
@@ -79,7 +79,7 @@ int	print_format(char format, va_list args)
 		return (print_hex(va_arg(args, unsigned int), 'X'));
 	else if (format == '%')
 		return (print_char('%'));
-	return (-1);
+	return (print_char(format));
 }
 ```
 The function ```print_format``` takes to arguments ```char format, va_list args```, ```format``` is the character after ```%``` and ```args``` is an object that allows traversing variable arguments and va_arg calls the next argument a X type.
